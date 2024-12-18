@@ -1,19 +1,23 @@
+import java.time.LocalDate;
+
 public class Admin extends User {
-    // Overriding the displayInfo method
+    // Constructor เรียกใช้ Superclass (User)
+    public Admin(String name, int year, int month, int day) {
+        super(name, year, month, day);
+    }
+
+    // Override Method displayInfo()
     @Override
-    public void displayInfo() {
-        // ใช้ Getter เพื่อดึงค่า name และ dob จาก User
-        System.out.println("Name: " + getName());
-        System.out.println("Date of Birth: " + getDob());
+    protected void displayInfo() {
+        super.displayInfo(); // เรียกใช้ method displayInfo() จาก User
         System.out.println("User type: admin");
     }
 
-    // Overloading displayInfo method
-    public void displayInfo(boolean full) {
+    // Overload Method displayInfo(boolean full)
+    protected void displayInfo(boolean full) {
         if (full) {
-            // Full details
-            displayInfo(); // Call the overridden method
-            System.out.println("Today's Date: " + java.time.LocalDate.now());
+            displayInfo(); // แสดงข้อมูลเต็ม
+            System.out.println("Today's Date: " + LocalDate.now());
         } else {
             System.out.println("User type: admin");
         }
