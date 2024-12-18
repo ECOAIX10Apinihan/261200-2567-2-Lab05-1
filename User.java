@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+import java.time.LocalDate; //เป็น librery เกี่ยวกับ set เวลา 
 
 public class User {
     protected String name; // ฟิลด์ protected ให้คลาสลูกเข้าถึงได้
